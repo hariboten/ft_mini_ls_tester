@@ -31,7 +31,7 @@ exec_ls ()
 {
 	cd ${testdir};
 	${abs_root_dir}/${mini_ls_dir}"/ft_mini_ls" ${option} > ${abs_root_dir}/${your_out};
-	${ls_com} > ${abs_root_dir}/${ls_out};
+	${ls_com} ${option} > ${abs_root_dir}/${ls_out};
 	cd ${abs_root_dir};
 }
 
@@ -44,8 +44,8 @@ result ()
 	else
 		${RED};
 		echo NG;
-		cat ${diff};
 		${COL_END};
+		cat ${diff};
 	fi
 }
 
