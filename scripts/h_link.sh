@@ -1,16 +1,16 @@
 #!bin/sh
 
 touch file0
-ln hlink0 file0
+ln file0 hlink0
 
 touch file1
-ln hlink1 file1
+ln  file1 hlink1
 touch file1
 
 touch a
-ln b a
+ln a b
 touch a
 
 touch c
-ln d c
+ln c d
 touch d

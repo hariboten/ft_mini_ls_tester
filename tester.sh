@@ -78,9 +78,9 @@ test_all ()
 		${COL_END}
 		return ;
 	fi
-	files="${abs_scrpt_dir}/"$(ls ${abs_scrpt_dir})
+	files=$(ls ${abs_scrpt_dir})
 	for scr in $files; do
-		do_test $scr;
+		do_test "${abs_scrpt_dir}/${scr}";
 	done
 }
 
