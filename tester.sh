@@ -90,29 +90,31 @@ test_all ()
 
 if [ $1 = "bonus" ] ; then
 	make -C ${mini_ls_dir} bonus;
-	echo "input additional option (like \"-u\")"
-	read option
+	option=$2
 else
 	make -C ${mini_ls_dir};
 fi
 
-if [ !$1 ] ; then
-	test_all;
-	exit;
-elif [ $1 = "all" ] ; then
-	test_all;
-	exit;
-fi
-
-# if arg1 is directory, use test all script in that directory
-if [ -d $1 ] ; then
-	testdir=$1
-	test_all;
-	exit;
-fi
-
-# else test all arg as script
-for arg in "$@"; do
-	abs=$(cd $(dirname $arg) && pwd)/$(basename $arg);
-	do_test abs;
-done
+test_all;
+exit;
+#
+#if [ !$1 ] ; then
+#	test_all;
+#	exit;
+#elif [ $1 = "all" ] ; then
+#	test_all;
+#	exit;
+#fi
+#
+## if arg1 is directory, use test all script in that directory
+#if [ -d $1 ] ; then
+#	testdir=$1
+#	test_all;
+#	exit;
+#fi
+#
+## else test all arg as script
+#for arg in "$@"; do
+#	abs=$(cd $(dirname $arg) && pwd)/$(basename $arg);
+#	do_test abs;
+#done
