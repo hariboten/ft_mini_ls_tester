@@ -14,14 +14,20 @@ sh tester.sh
 ## script
 scriptsディレクトリの中にテストケースの状態を作るshell scriptを追加することでテストケースを追加できます。
 
-## other
-（未テスト）
+## bonus
+```
+sh tester.sh bonus (option)
+# sh tester.sh bonus -u
+```
+
+
+## ~~other~~
+この機能は除去しました
 ```
 sh tester.sh some_script.sh
 ```
-スクリプトを指定して単体テスト
-
+~~スクリプトを指定して単体テスト~~
 ```
 sh tester.sh user_script_dir
 ```
-ディレクトリを指定してディレクトリ内のスクリプトをすべてテスト
+~~ディレクトリを指定してディレクトリ内のスクリプトをすべてテスト~~
