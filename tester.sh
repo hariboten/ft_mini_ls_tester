@@ -4,6 +4,7 @@
 mini_ls_dir=../ft_mini_ls
 
 ls_com="ls -1tr"
+option=""
 
 scripts_dir="./scripts"
 testdir="./testdir"
@@ -29,7 +30,7 @@ clean ()
 exec_ls ()
 {
 	cd ${testdir};
-	${abs_root_dir}/${mini_ls_dir}"/ft_mini_ls" > ${abs_root_dir}/${your_out};
+	${abs_root_dir}/${mini_ls_dir}"/ft_mini_ls" ${option} > ${abs_root_dir}/${your_out};
 	${ls_com} > ${abs_root_dir}/${ls_out};
 	cd ${abs_root_dir};
 }
@@ -87,7 +88,13 @@ test_all ()
 #main
 # if arg1 is "all" or no arg, use default script dir and test all
 
-make -C ${mini_ls_dir}
+if [ $1 = "bonus" ] ; then
+	make -C ${mini_ls_dir} bonus;
+	echo "input additional option (like \"-u\")"
+	read option
+else
+	make -C ${mini_ls_dir};
+fi
 
 if [ !$1 ] ; then
 	test_all;
