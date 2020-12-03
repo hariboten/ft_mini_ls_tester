@@ -52,7 +52,7 @@ result ()
 set_test_case ()
 {
 	echo case `basename $1`;
-	mkdir ${testdir};
+	mkdir -p ${testdir};
 	cd ${testdir};
 	chmod 777 $1;
 	sh $1;
