@@ -1,7 +1,7 @@
 #!bin/sh
 
 #path from tester root dir
-mini_ls_path=../ft_mini_ls/ft_mini_ls
+mini_ls_dir=../ft_mini_ls
 
 ls_com="ls -1tr"
 
@@ -29,7 +29,7 @@ clean ()
 exec_ls ()
 {
 	cd ${testdir};
-	${abs_root_dir}/${mini_ls_path} > ${abs_root_dir}/${your_out};
+	${abs_root_dir}/${mini_ls_dir}"/ft_mini_ls" > ${abs_root_dir}/${your_out};
 	${ls_com} > ${abs_root_dir}/${ls_out};
 	cd ${abs_root_dir};
 }
@@ -86,6 +86,9 @@ test_all ()
 
 #main
 # if arg1 is "all" or no arg, use default script dir and test all
+
+make -C ${mini_ls_dir}
+
 if [ !$1 ] ; then
 	test_all;
 	exit;
