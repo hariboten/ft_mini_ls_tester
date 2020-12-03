@@ -15,6 +15,7 @@ sh tester.sh
 scriptsディレクトリの中にテストケースの状態を作るshell scriptを追加することでテストケースを追加できます。
 
 ## bonus
+第一引数にbonus, 第二引数にオプションを指定
 ```
 sh tester.sh bonus (option)
 # sh tester.sh bonus -u
