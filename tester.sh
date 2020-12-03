@@ -14,10 +14,10 @@ diff="./diff"
 abs_scrpt_dir=$(cd ${scripts_dir} && pwd)
 abs_root_dir=$(pwd)
 
-
-BLUE="echo -n \e[32m"
-RED="echo -n \e[31m"
-COL_END="echo -n \e[m"
+ESC=$(printf "\033")
+BLUE="echo ${ESC}[32m\c"
+RED="echo ${ESC}[31m\c"
+COL_END="echo ${ESC}[m\c"
 
 clean ()
 {
