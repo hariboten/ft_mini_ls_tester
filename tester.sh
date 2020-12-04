@@ -73,7 +73,8 @@ do_test ()
 # test all case using all script in $scripts_dir
 test_all ()
 {
-	if [ ! `ls ${abs_scrpt_dir}` ] ; then
+	ls ${abs_scrpt_dir}/* > /dev/null 2>&1
+	if [ $? -ne 0 ] ; then
 		${RED};
 		echo no script;
 		${COL_END}
@@ -88,7 +89,7 @@ test_all ()
 #main
 # if arg1 is "all" or no arg, use default script dir and test all
 
-if [ $1 = "bonus" ] ; then
+if [ $1="bonus" ] ; then
 	make -C ${mini_ls_dir} bonus;
 	option=$2
 else
